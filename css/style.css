@@ -7,9 +7,7 @@
 }
 
 body {
-  background: #616161
-    url(https://images.unsplash.com/photo-1452716726610-30ed68426a6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=177c2914fe84d20069f207e27632acc9)
-    center/cover no-repeat;
+ background: #616161 url(../img/bg.jfif) center/cover no-repeat;
   height: 100vh;
   overflow: hidden;
   color: #fff;
