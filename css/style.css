@@ -1,17 +1,17 @@
 *,
-:before,
-:after {
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   transition: 0.4s;
 }
 
 body {
- background: #616161 url(../img/bg.jfif) center/cover no-repeat;
+  background: #616161 url(../img/bg.jfif) center/cover no-repeat;
   height: 100vh;
   overflow: hidden;
   color: #fff;
-  font-family: Roboto;
+  font-family: Arial;
 }
 
 .modal {
@@ -26,18 +26,22 @@ body {
   right: 0;
   transition: 0.4s, box-shadow 0.3s 0.4s;
 }
+
 .modal.hidden {
   box-shadow: none;
-  transition: 0.4s, box-shadow 0s;
+  transition: 0.4s, box-shadow 0;
   opacity: 0;
   visibility: hidden;
 }
-.modal.hidden .form {
-  top: 100%;
-}
+
 .modal.hidden .invite {
   top: -100%;
 }
+
+.modal.hidden .form {
+  top: 100%;
+}
+
 .modal.hidden .invite .close {
   height: 0;
   width: 0;
@@ -67,13 +71,14 @@ input {
   color: #fff;
   font-size: 20px;
 }
+
 input:-webkit-autofill {
-  box-shadow: 0 0 0px 500px #7a7a7a inset;
+  box-shadow: 0 0 0 500px #7a7a7a inset;
   -webkit-text-fill-color: #fff;
 }
 
 label {
-  font: 500 14px Roboto;
+  font: 500 14px Arial;
   color: #fb5781;
 }
 
@@ -92,11 +97,13 @@ button {
   cursor: pointer;
   transform: translateX(-50%);
 }
-button:hover:before {
+
+button:hover::before {
   left: 110%;
   transition: 0.3s;
 }
-button:before {
+
+button::before {
   content: "";
   background: rgba(255, 255, 255, 0.3);
   height: 100%;
@@ -105,7 +112,7 @@ button:before {
   top: 0;
   left: -100%;
   transform: skew(-45deg);
-  transition: 0s;
+  transition: 0;
 }
 
 .invite {
@@ -114,7 +121,7 @@ button:before {
 }
 
 h3 {
-  font: 30px Roboto;
+  font-size: 30px Arial;
   text-align: center;
   margin-top: 40px;
   text-transform: uppercase;
@@ -123,7 +130,7 @@ h3 {
 .nope {
   background: #474747;
   padding: 10px 15px;
-  border-radius: 3px;
+  border-image: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   position: absolute;
   bottom: 30px;
@@ -133,6 +140,7 @@ h3 {
   cursor: pointer;
   transform: translateX(-50%);
 }
+
 .nope:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   transform: translateX(-50%);
@@ -150,8 +158,9 @@ h3 {
   cursor: pointer;
   transition: 0.4s 0.3s;
 }
-.close:before,
-.close:after {
+
+.close::before,
+.close::after {
   content: "";
   background: #fff;
   height: 80%;
@@ -161,7 +170,8 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-.close:after {
+
+.close::after {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
@@ -183,10 +193,12 @@ h3 {
   opacity: 0;
   visibility: hidden;
 }
+
 .open.active {
   opacity: 1;
   visibility: visible;
 }
+
 .open:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
